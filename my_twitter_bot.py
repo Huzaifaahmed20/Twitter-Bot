@@ -24,7 +24,6 @@ data = trends[0]
 # print type(trends)
 
 
-
 def retrieve_last_seen(file_name):
     f_read = open(file_name, 'r')
     last_seen_id = int(f_read.read().strip())
@@ -55,14 +54,16 @@ def reply_to_tweets():
         for trendName in data['trends']:
             # print '-------  '+trendName['name'].encode('utf8')
             # reply to #helloworld
-            # if '#helloworld' in mention.full_text: 
+            # if '#helloworld' in mention.full_text:
             # reply to top 10 trending hastags
-            if trendName['name'].encode('utf8') in mention.full_text:
+            trends = trendName['name'].encode('utf8')
+            if trends in mention.full_text:
                 print('found hastag')
                 print('responding back ...')
                 api.update_status('@'+mention.user.screen_name +
-                ' hey responding '+trendName['name'].encode('utf8')+  
+                ' hey responding '+trendName['name'].encode('utf8') +
                 ' back to you', mention.id)
+
 
 while True:
     reply_to_tweets()
