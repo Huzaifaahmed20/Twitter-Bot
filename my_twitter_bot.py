@@ -1,5 +1,8 @@
 import tweepy
 import time
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
 print('Py is running')
 
 API_KEY = 'Zoysn4jJxOb9SFcbxw0mLCGYc'
@@ -50,18 +53,16 @@ def reply_to_tweets():
         last_seen_id = mention.id
         store_last_seen_id(last_seen_id, FILE_NAME)
         for trendName in data['trends']:
-            print '-------  '+trendName['name'].encode('utf8')
-
+            # print '-------  '+trendName['name'].encode('utf8')
             # reply to #helloworld
-            if '#helloworld' in mention.full_text: 
+            # if '#helloworld' in mention.full_text: 
             # reply to top 10 trending hastags
-            # if trendName['name'].encode('utf8') in mention.full_text:
-                print('found helloworld')
+            if trendName['name'].encode('utf8') in mention.full_text:
+                print('found hastag')
                 print('responding back ...')
                 api.update_status('@'+mention.user.screen_name +
                 ' hey responding '+trendName['name'].encode('utf8')+  
                 ' back to you', mention.id)
-
 
 while True:
     reply_to_tweets()
