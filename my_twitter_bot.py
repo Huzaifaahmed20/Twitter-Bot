@@ -5,10 +5,10 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 print('Py is running')
 
-API_KEY = 'Zoysn4jJxOb9SFcbxw0mLCGYc'
-API_SECRET = 'Bzr3I0OMB2R1U7kdxpDfnTrYa7tQzEnYMroM1mUvGtNrQBa48w'
-ACCESS_TOKEN = '739473272295821312-p8H7qHU0rT9Vx99WJIaGSQYdoE1HcwP'
-ACCESS_TOKEN_SECRET = '2HzYLgcEEbTgtDJ9A44YNDyZLOShsMtJngTbUg9zDzPjZ'
+API_KEY = 'xxxxxxxxxxxxxxxxxxxxxxxx'
+API_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+ACCESS_TOKEN = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+ACCESS_TOKEN_SECRET = 'xxxxxxxxxxxxxxxxxxxxxxxxxxx'
 
 
 auth = tweepy.OAuthHandler(API_KEY, API_SECRET)
